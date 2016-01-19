@@ -1,30 +1,39 @@
 var triangleTest = function(sidea, sideb, sidec) {
-  if ((sidea + sideb > sidec) || (sidea +sidec > sideb) || (sideb + sidec > sidea)) {
+  if (((sidea + sideb) > sidec) && ((sidea + sidec) > sideb) && ((sideb + sidec) > sidea)) {
   return true;
-    if (sidea === sideb === sidec){
-      return ("equilateral")
-    }
-
   } else {
   return false;
   }
 };
 
-/*
-(function(exports) {
-  "use strict";
-
-  function Cow(name) {
-    this.name = name || "Anon cow";
+var equilateralTest = function(sidea, sideb, sidec) {
+  if ((((sidea === sideb) && (sidea === sidec) && (sideb === sidec)) && ((sidea + sideb) > sidec) && ((sidea + sidec) > sideb) && ((sideb + sidec) > sidea))) {
+    return true;
+  } else {
+    return false;
   }
-  exports.Cow = Cow;
+};
 
-  Cow.prototype = {
-    greets: function(target) {
-      if (!target)
-        throw new Error("missing target");
-      return this.name + " greets " + target;
-    }
-  };
-})(this);
+var isoscelesTest = function(sidea, sideb, sidec) {
+  if ((((sidea === sideb) || (sidea === sidec) || (sideb === sidec)) && ((sidea + sideb) > sidec) && ((sidea + sidec) > sideb) && ((sideb + sidec) > sidea))) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+var scaleneTest = function(sidea, sideb, sidec) {
+  if ((((sidea !== sideb) && (sidea !== sidec) && (sideb !== sidec)) && ((sidea + sideb) > sidec) && ((sidea + sidec) > sideb) && ((sideb + sidec) > sidea))) {
+    return true;
+  } else {
+    return false;
+  }
+};
+/*
+if (sidea === sideb === sidec){
+  return true;
+}
+*/
+/*
+(((1 + 1) > 6) || ((1 + 6) > 1) || ((1 + 6) > 1)) {
 */

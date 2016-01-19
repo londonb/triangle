@@ -1,36 +1,37 @@
 
 describe('triangleTest', function() {
-  it("is true if a+b>c || a+c>b || b+a>c", function() {
-    expect(triangleTest((sidea(2)) && (sideb = (2)) && (sidec = (2)))).to.equal(true);
+  it("is a triangle, if a+b>=c & a+c<=b & b+c<=a", function() {
+    expect(triangleTest(2,2,2)).to.equal(true);
+  });
+  it("is false is not a triangle, if a+b>=c & a+c<=b & b+c<=a", function() {
+    expect(triangleTest(1,1,6)).to.equal(false);
   });
 });
-/*
-var expect = chai.expect;
 
-describe("Cow", function() {
-  describe("constructor", function() {
-    it("should have a default name", function() {
-      var cow = new Cow();
-      expect(cow.name).to.equal("Anon cow");
-    });
-
-    it("should set cow's name if provided", function() {
-      var cow = new Cow("Kate");
-      expect(cow.name).to.equal("Kate");
-    });
-  });
-
-  describe("#greets", function() {
-    it("should throw if no target is passed in", function() {
-      expect(function() {
-        (new Cow()).greets();
-      }).to.throw(Error);
-    });
-
-    it("should greet passed target", function() {
-      var greetings = (new Cow("Kate")).greets("Baby");
-      expect(greetings).to.equal("Kate greets Baby");
-    });
+describe('equilateralTest', function() {
+  it ("is true if a=b=c", function() {
+    expect(equilateralTest(1,1,1)).to.equal(true);
   });
 });
-*/
+
+describe('isoscelesTest', function() {
+  it("is an isosceles if a=b || b=c || a=c", function() {
+    expect(isoscelesTest(4,4,5)).to.equal(true);
+  });
+});
+
+describe('scaleneTest', function() {
+  it("is an scalene if a !=b !=c", function() {
+    expect(scaleneTest(4,7,5)).to.equal(true);
+  });
+});
+
+/*  it("is equilateral if a=b=c", function() {
+    expect(triangleTest(1,1,1)).to.equal(true);
+  });
+  it("is an isosceles if a=b || b=c || a=c", function(){
+    expect(triangleTest(3,3,5)).to.equal(true);
+  });
+  it("is scalene if a !=b !=c", function() {
+    expect(triangleTest(4,7,5)).to.equal(true);
+  });*/
